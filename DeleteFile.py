@@ -27,7 +27,7 @@ if vergit != vercurrent and len(vercurrent) == len(vergit):
     print subprocess.check_output('sudo git clone https://github.com/izemkung/pihosMAY /home/pi/tmp', shell=True)
     time.sleep(10)
     if os.path.exists("/home/pi/tmp") == True:
-        print subprocess.check_output('sudo rm -rf /home/pi/pihos', shell=True)
+        print subprocess.check_output('', shell=True)
         #time.sleep(10)
         print subprocess.check_output('sudo mv /home/pi/tmp /home/pi/pihos', shell=True)
     #print subprocess.check_output('rm -rf /home/pi/tmp', shell=True)

@@ -113,7 +113,7 @@ while True:
     #======================================================================
     hasher3 = hashlib.md5()
     hasher4 = hashlib.md5()
-    with open('/home/pi/pihos/connect.sh', 'rb') as afile:
+    with open('/home/pi/connect.sh', 'rb') as afile:
         buf = afile.read(BLOCKSIZE)
         while len(buf) > 0:
             hasher3.update(buf)
@@ -127,7 +127,7 @@ while True:
             buf = afile.read(BLOCKSIZE)
     print(hasher4.hexdigest())
 
-    info3 = os.stat('/home/pi/pihos/connect.sh')
+    info3 = os.stat('/home/pi/connect.sh')
     info4 = os.stat('/home/pi/usb/connect.sh')
     #print info1.st_mtime
     #print info2.st_mtime
@@ -135,7 +135,7 @@ while True:
     #fileConfig2 = max(glob.iglob('/home/pi/usb/config.ini'), key=os.path.getctime)
 
     if hasher3.hexdigest() !=  hasher4.hexdigest():
-        os.system('sudo rm -rf /home/pi/pihos/connect.sh')
+        os.system('sudo rm -rf /home/pi/connect.sh')
         os.system('sudo cp /home/pi/usb/connect.sh /home/pi/connect.sh')
         #os.system('sudo rm -rf /home/pi/usb/config.ini')
         #os.system('sudo cp /home/pi/config.ini /home/pi/usb/config.ini')
