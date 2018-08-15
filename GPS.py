@@ -74,7 +74,7 @@ portOk = '/dev/ttyUSB1'
 #os.system('clear') #clear the terminal (optional)
 
 try:
-  os.system('sudo chmod +x /home/pi/pihos/connect.sh')
+  os.system('sudo chmod +x /home/pi/connect.sh')
   os.system('sudo timedatectl set-ntp True')
 
   os.system('sudo systemctl stop gpsd.socket')
